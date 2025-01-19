@@ -13,37 +13,38 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
+  cilCopy,
+  cilList,
+  cilNoteAdd,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
   {
+    component: CNavItem,
+    name: 'Dashboard',
+    to: '/dashboard',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  },
+  {
     component: CNavGroup,
-    name: 'Service Requests',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    name: 'Template Management',
+    icon: <CIcon icon={cilCopy} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
         name: 'Template Listing',
+        icon: <CIcon icon={cilList} customClassName="nav-icon" />,
         to: '/service-requests/template-listing',
       },
       {
         component: CNavItem,
         name: 'Create Template',
+        icon: <CIcon icon={cilNoteAdd} customClassName="nav-icon" />,
         to: '/service-requests/template',
       },
     ],
   },
-  {
-    component: CNavItem,
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
-  },  
   {
     component: CNavTitle,
     name: 'Theme',
